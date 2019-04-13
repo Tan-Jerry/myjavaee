@@ -7,6 +7,7 @@
 <title>helloapp</title>
 </head>
 <body>
-  <b>Hello: My first java ee web app</b>
+  <p><b>Hello: My first java ee web app</b></p>
+  <%out.println(new java.util.Date());%>
 </body>
 </html>
