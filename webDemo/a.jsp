@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page info="this is a jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,10 @@
   <br/>
   <p><%=info()%></p>
   
+  <%
+  application.setAttribute("counter", String.valueOf(count));
+  %>
+  
   <table bgcolor="#999dd" border="1" width="300px">
   <%
   for (int i=0; i<10; i++)
@@ -36,5 +41,7 @@
   }
   %>
   </table>
+  
+  <p><%=getServletInfo() %></p>
 </body>
 </html>
