@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet
 				if (rs.getString("userpwd").equals(pass))
 				{
 					HttpSession session = req.getSession(true);
-					session.setAttribute("name", username);
+					session.setAttribute("user", username);
 					
 					rd = req.getRequestDispatcher("/welcome.jsp");
 					rd.forward(req, resp);
