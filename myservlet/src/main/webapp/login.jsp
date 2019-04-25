@@ -12,6 +12,10 @@
 		{
 			out.println(request.getAttribute("err") + "<br/>");
 		}
+		if (request.getAttribute("tip") != null)
+		{
+			out.println(request.getAttribute("tip") + "<br/>");
+		}
 		%>
 	</span>
 	<form id="login" method="post" action="login">

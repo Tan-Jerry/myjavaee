@@ -15,7 +15,7 @@ import com.jerry.myservlet.db.DaoUser;
 import com.jerry.myservlet.db.DaoUserImpl;
 
 @WebServlet(name="login", urlPatterns= {"/login"})
-public class LoginServlets extends HttpServlet
+public class LoginServlet extends HttpServlet
 {
 	/**
 	 * 
