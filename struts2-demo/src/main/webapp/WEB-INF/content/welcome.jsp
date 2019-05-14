@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,7 @@
 <title>Welcome to Struts2</title>
 </head>
 <body>
-Welcome to Struts2!!!
+	Welcome <%=session.getAttribute("user") %> to Struts2!!!
+	<s:debug/>
 </body>
 </html>

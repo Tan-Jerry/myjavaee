@@ -25,11 +25,16 @@
 
 
 <struts>
+	<constant name="struts.devMode" value="true"/>
     <constant name="struts.custom.i18n.resources" value="mess"/>
     <constant name="struts.enable.DynamicMethodInvocation" value="false"/>
     
     <package name="jerryit" namespace="/" extends="struts-default">
-        <action name="login" class="com.jerry.action.LoginAction">
+        <action name="login" class="com.jerry.action.LoginAction" method="execute">
+    		<result name="error">/WEB-INF/content/error.jsp</result>
+    		<result name="success">/WEB-INF/content/welcome.jsp</result>
+    	</action>
+    	<action name="regist" class="com.jerry.action.LoginAction" method="regist">
     		<result name="error">/WEB-INF/content/error.jsp</result>
     		<result name="success">/WEB-INF/content/welcome.jsp</result>
     	</action>
