@@ -4,11 +4,12 @@
 "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd" >
 <hibernate-configuration>
 	<session-factory>
-
-		<property name="connection.driver_class">com.sap.db.jdbc.Driver</property>
-		<property name="connection.url">jdbc:sap://10.58.136.150:30015/?currentschema=U120212</property>
-		<property name="connection.username">SYSTEM</property>
-		<property name="connection.password">manager</property>
+	
+		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="connection.url">jdbc:sqlserver://localhost:65026;databaseName=J2EE_CRUD</property>
+		<property name="connection.username">sa</property>
+		<property name="connection.password">Initial0</property>
 		
 		<property name="hibernate.c3p0.max_size">20</property>
 		<property name="hibernate.c3p0.min_size">1</property>
