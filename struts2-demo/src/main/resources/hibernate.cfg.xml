@@ -24,5 +24,6 @@
 		<property name="hibernate.format_sql">true</property>
 		
 		<mapping class="com.jerry.domain.User"/>
+		<mapping class="com.jerry.domain.Person"/>
 	</session-factory>
 </hibernate-configuration>
