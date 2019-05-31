@@ -1,6 +1,7 @@
 package com.jerry.action;
 
 import com.jerry.dao.DaoPerson;
+import com.jerry.domain.Address;
 import com.jerry.domain.Person;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -46,6 +47,11 @@ public class PersonAction extends ActionSupport
 		person.setAge(28);
 		person.getSchools().add(school1);
 		person.getSchools().add(school2);
+		
+		Address address = new Address();
+		address.setSddressDetail("No. 17 room 202");
+		
+		person.setAddress(address);
 		
 		daoPerson.addPerson(person);
 

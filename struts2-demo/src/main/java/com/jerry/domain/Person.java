@@ -11,8 +11,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OrderColumn;
 import javax.persistence.Table;
+import javax.persistence.CascadeType;
 
 @Entity
 @Table(name = "person_inf")
@@ -31,6 +33,10 @@ public class Person
 	@OrderColumn(name = "list_order")
 	private List<String> schools = new ArrayList<String>();
 
+	@ManyToOne(targetEntity=Address.class, cascade=CascadeType.ALL)
+	@JoinColumn(name="address_id", nullable=false)
+	private Address address;
+	
 	public Integer getId()
 	{
 		return id;
@@ -70,4 +76,14 @@ public class Person
 	{
 		this.schools = schools;
 	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	
+	
 }

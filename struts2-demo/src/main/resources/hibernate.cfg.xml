@@ -5,10 +5,16 @@
 <hibernate-configuration>
 	<session-factory>
 	
-		<property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+		<!-- property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
 		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 		<property name="connection.url">jdbc:sqlserver://localhost:65026;databaseName=J2EE_CRUD</property>
 		<property name="connection.username">sa</property>
+		<property name="connection.password">Initial0</property -->
+		
+		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost/my_ssh?useSSL=false&amp;serverTimezone=UTC</property>
+		<property name="connection.username">root</property>
 		<property name="connection.password">Initial0</property>
 		
 		<property name="hibernate.c3p0.max_size">20</property>
@@ -25,5 +31,6 @@
 		
 		<mapping class="com.jerry.domain.User"/>
 		<mapping class="com.jerry.domain.Person"/>
+		<mapping class="com.jerry.domain.Address"/>
 	</session-factory>
 </hibernate-configuration>
