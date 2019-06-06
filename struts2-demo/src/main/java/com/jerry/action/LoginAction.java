@@ -1,6 +1,7 @@
 package com.jerry.action;
 
 import com.jerry.dao.DaoUser;
+import com.jerry.dao.DaoUserJpa;
 import com.jerry.domain.User;
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -39,19 +40,20 @@ public class LoginAction extends ActionSupport
 	@Override
 	public String execute() throws Exception
 	{
-//		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		DaoUserJpa daoUserJpa = new DaoUserJpa();
+		daoUserJpa.queryUsers();
 		
-		DaoUser daoUser = new DaoUser();
-		User user = daoUser.getUser(getUsername());
-		
-		if (user != null)
-		{
-			if (user.getPassword().equals(getPassword()))
-			{
-				ActionContext.getContext().getSession().put("user", getUsername());
-				return SUCCESS;
-			}
-		}
+//		DaoUser daoUser = new DaoUser();
+//		User user = daoUser.getUser(getUsername());
+//		
+//		if (user != null)
+//		{
+//			if (user.getPassword().equals(getPassword()))
+//			{
+//				ActionContext.getContext().getSession().put("user", getUsername());
+//				return SUCCESS;
+//			}
+//		}
 
 		return ERROR;
 	}
