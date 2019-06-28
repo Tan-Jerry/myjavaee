@@ -73,9 +73,7 @@ public class DaoUserJpa
 		
 		for (User user: users)
 		{
-			System.out.println(user.getUsername());
-			
-			System.out.println(user.getPassword());
+			System.out.println(user.getUsername() + " : " + user.getPassword());
 		}
 		
 		transaction.commit();
