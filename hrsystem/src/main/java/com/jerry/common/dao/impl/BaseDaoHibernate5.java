@@ -5,11 +5,13 @@ import java.util.List;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import com.jerry.common.dao.BaseDao;
 
 public class BaseDaoHibernate5<T> implements BaseDao<T>
 {
+	@Autowired
 	private SessionFactory sessionFactory;
 
 	public SessionFactory getSessionFactory()
