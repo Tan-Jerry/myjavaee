@@ -22,7 +22,7 @@ import com.jerry.hrsystem.domain.Payment;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
-@ComponentScan(basePackages = {"com.jerry.hrsystem.config", "com.jerry"})
+@ComponentScan(basePackages = {"com.jerry"})
 public class AppConfig
 {
 	@Bean(destroyMethod = "close")
