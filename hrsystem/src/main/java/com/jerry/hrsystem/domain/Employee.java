@@ -1,5 +1,6 @@
 package com.jerry.hrsystem.domain;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,8 +25,10 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @DiscriminatorColumn(name = "emp_type", discriminatorType = DiscriminatorType.STRING)
 @DiscriminatorValue(value = "1")
-public class Employee
+public class Employee implements Serializable
 {
+	private static final long serialVersionUID = 68L;
+	
 	@Id
 	@Column(name = "emp_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,7 +41,7 @@ public class Employee
 	private String pass;
 	
 	@Column(name = "emp_salary", nullable = false)
-	private String salary;
+	private double salary;
 	
 	@ManyToOne(targetEntity = Manager.class)
 	@JoinColumn(name = "mgr_id")
@@ -54,7 +57,7 @@ public class Employee
 	{
 	}
 
-	public Employee(Integer id, String name, String pass, String salary, Manager manager, Set<Attend> attends,
+	public Employee(Integer id, String name, String pass, double salary, Manager manager, Set<Attend> attends,
 			Set<Payment> payments)
 	{
 		super();
@@ -94,11 +97,11 @@ public class Employee
 		this.pass = pass;
 	}
 
-	public String getSalary()
+	public double getSalary()
 	{
 		return salary;
 	}
-	public void setSalary(String salary)
+	public void setSalary(double salary)
 	{
 		this.salary = salary;
 	}

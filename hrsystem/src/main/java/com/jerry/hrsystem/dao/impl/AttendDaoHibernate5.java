@@ -15,16 +15,19 @@ import com.jerry.hrsystem.domain.Employee;
 @Component
 public class AttendDaoHibernate5 extends BaseDaoHibernate5<Attend> implements AttendDao
 {
+	@Override
 	public List<Attend> findByEmpAndMounth(Employee emp, String mounth)
 	{
 		return find("select a from Attend as a where" + "a.employee = ?0 and substring(a.dutyDay, 0, 7)=?1", emp, mounth);
 	}
 	
+	@Override
 	public List<Attend> findByempAndDutyDate(Employee emp, String dutyDay)
 	{
 		return find("from Attend as a where a.employee = ?0 and a.dutyDay = ?1", emp, dutyDay);
 	}
 	
+	@Override
 	public Attend findByEmpAndDutyDayAndCome(Employee emp, String dutyDay, boolean isCome)
 	{
 		List<Attend> al = findByempAndDutyDate(emp, dutyDay);
@@ -43,6 +46,7 @@ public class AttendDaoHibernate5 extends BaseDaoHibernate5<Attend> implements At
 		return null;
 	}
 	
+	@Override
 	public List<Attend> findByEmpUnAttend(Employee emp, AttendType type)
 	{
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");

@@ -1,5 +1,6 @@
 package com.jerry.hrsystem.domain;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +15,10 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 @DiscriminatorValue(value = "2")
-public class Manager extends Employee
+public class Manager extends Employee implements Serializable
 {
+	private static final long serialVersionUID = 68L;
+	
 	@Column(name = "dept_name", length = 50)
 	private String dept;
 	

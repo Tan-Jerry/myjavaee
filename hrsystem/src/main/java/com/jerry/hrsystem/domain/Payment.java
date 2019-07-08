@@ -1,5 +1,7 @@
 package com.jerry.hrsystem.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,8 +17,10 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Table(name = "payment_inf")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Payment
+public class Payment implements Serializable
 {
+	private static final long serialVersionUID = 68L;
+	
 	@Id
 	@Column(name = "payment_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

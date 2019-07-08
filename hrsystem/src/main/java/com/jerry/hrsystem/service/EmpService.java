@@ -1,6 +1,9 @@
 package com.jerry.hrsystem.service;
 
-import com.jerry.hrsystem.domain.Manager;
+import java.util.List;
+
+import com.jerry.hrsystem.domain.*;
+import com.jerry.hrsystem.vo.*;
 
 public interface EmpService
 {
@@ -24,21 +27,21 @@ public interface EmpService
 	public static final int LEAVE_LIMIT = 18;
 	public static final int EARLY_LIMIT = 16;
 	
-//	int validLogin(Manager mgr);
-//
-//	void autoPunch();
-//
-//	void autoPay();
-//
-//	int validPunch(String user , String dutyDay);
-//
-//	public int punch(String user , String dutyDay , boolean isCome);
-//
-//	List<PaymentBean> empSalary(String empName);
-//
-//	List<AttendBean> unAttend(String empName);
-//
-//	List<AttendType> getAllType();
-//
-//	boolean addApplication(int attId , int typeId , String reason);
+	int validLogin(Manager mgr);
+
+	void autoPunch();
+
+	void autoPay();
+
+	int validPunch(String user , String dutyDay);
+
+	public int punch(String user , String dutyDay , boolean isCome);
+
+	List<PaymentBean> empSalary(String empName);
+
+	List<AttendBean> unAttend(String empName);
+
+	List<AttendType> getAllType();
+
+	boolean addApplication(int attId , int typeId , String reason);
 }

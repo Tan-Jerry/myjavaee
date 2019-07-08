@@ -1,5 +1,6 @@
 package com.jerry.hrsystem.domain;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -17,8 +18,10 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Table(name = "attend_inf")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Attend
+public class Attend implements Serializable
 {
+	private static final long serialVersionUID = 68L;
+	
 	@Id
 	@Column(name = "attend_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

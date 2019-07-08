@@ -12,6 +12,7 @@ import com.jerry.hrsystem.domain.Employee;
 @Component
 public class ApplicationDaoHibernate5 extends BaseDaoHibernate5<Application> implements ApplicationDao
 {
+	@Override
 	public List<Application> findByEmp(Employee emp)
 	{
 		return find("select a from Application as a where " + "a.attend.employee = ?0", emp);

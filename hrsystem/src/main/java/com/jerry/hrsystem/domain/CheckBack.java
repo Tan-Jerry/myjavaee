@@ -1,5 +1,7 @@
 package com.jerry.hrsystem.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,8 +18,10 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 @Entity
 @Table(name = "checkback_inf")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class CheckBack
+public class CheckBack implements Serializable
 {
+	private static final long serialVersionUID = 68L;
+	
 	@Id
 	@Column(name = "check_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
